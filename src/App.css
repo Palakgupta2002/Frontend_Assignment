@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 40px 20px 20px 20px;
+  height: 100vh;
   color: white;
-}
+  background: #000;
+  transition: background 0.5s ease-in-out;
+  .navbarMain {
+   
+    .navbarContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90vh;
 
-.App-link {
-  color: #61dafb;
+    .spotifyImage{
+      width: 131.53px;
+    }
+    .songCoverTittleName{
+      padding-top: 10px;
+      p{
+        font-size: 20px;
+        cursor: pointer;
+        color: #7c7676;
+        padding-top: 15px;
+      }
+      p:hover{
+        color: white;
+      }
+    }
+    .profile {
+      color: yellow;
+      margin-top: auto;
+      padding-bottom: 10px;
+    }
+   
+  }
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
