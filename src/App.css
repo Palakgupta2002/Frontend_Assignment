@@ -1,13 +1,11 @@
 .app {
   display: flex;
   justify-content: space-between;
-  padding: 40px 20px 20px 20px;
-  height: 100vh;
+  padding: 40px;
   color: white;
-  background: #000;
   transition: background 0.5s ease-in-out;
+  overflow: hidden;
   .navbarMain {
-   
     .navbarContent {
         display: flex;
         flex-direction: column;
@@ -22,7 +20,7 @@
       p{
         font-size: 20px;
         cursor: pointer;
-        color: #7c7676;
+        color: #070202;
         padding-top: 15px;
       }
       p:hover{
@@ -36,6 +34,120 @@
     }
    
   }
+  .profilePoster{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  
+  
+}
+.SongList{
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+  gap: 10px;
+  .songtitle{
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .inputDiv{
+    display: flex;
+    position: relative; 
+    input{
+      border-radius: 8px;
+      width: 400px;
+      padding: 8px 16px 8px 16px;
+      background-color: #4e4a4a;
+      color: white;
+      border: none;   
+    }
+    input::Placeholder{
+      color: white;
+  
+    }
+    input[type=text]:focus {
+      border: 0px solid #555;
+    }
+    .searchButton{
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: #4e4a4a; /* Same as input background */
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      cursor: pointer;
+    }
+
+  }
+  .songListElement{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  }
+  .songElement{
+    display:flex;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 8px;
+    .songDetails{
+      display: flex;
+      gap: 20px;
+    }
+    .songPoster{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  .songElement:hover{
+    background-color: #4e4a4a;
+  
+  }
+
+}
+.songMedia{
+  .imageDiv{
+    width: 500px;
+    height: 400px;
+
+  }
+  .image{
+    width: 500px;
+    height: 400px;
+    border-radius: 8px;
+    
+  }
+  .audioControlComponents{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    .audioControl{
+      display: flex;
+      gap:10px
+    }
+  }
+  .progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: black; /* Background color for the unfilled part */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .progress {
+    height: 100%;
+    background-color: white; /* Color for the filled part */
+    transition: width 0.2s;
+  }
+  .saveSong{
+    cursor: pointer;
+  }
+ 
   
 }
 }

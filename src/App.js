@@ -1,18 +1,12 @@
 // src/App.js
 import './App.css';
-import Navbar from './Components/Navbar';
-import SongList from './Components/SongList';
-import SongMedia from './Components/SongMedia';
+import Home from './Components/Home';
 import { SongProvider } from './SongContext';
 
 function App() {
   return (
     <SongProvider>
-      <div className='app'>
-        <Navbar />
-        <SongList />
-        <SongMedia />
-      </div>
+     <Home/>
     </SongProvider>
   );
 }

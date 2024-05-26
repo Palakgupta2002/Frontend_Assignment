@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import spotifyClone from '../assest/Spotify-logo.png';
 import SongContext from '../SongContext';
+import girlImage from "../assest/girl.jpg"
 
 const Navbar = () => {
     const { setSongTitle } = useContext(SongContext);
@@ -29,7 +30,7 @@ const Navbar = () => {
                         <div key={index} className='songCoverTittleName'>
                             <p
                                 onClick={() => setSongTitleFun(index)}
-                                style={{ color: selectedTitleIndex === index ? 'white' : '#7c7676' }}
+                                style={{ color: selectedTitleIndex === index ? 'white' : 'black' }}
                             >
                                 {title}
                             </p>
@@ -37,7 +38,7 @@ const Navbar = () => {
                     ))}
                 </div>
                 <div className='profile'>
-                    Profile
+                    <img className='profilePoster' src={girlImage}/>
                 </div>
             </div>
         </div>
