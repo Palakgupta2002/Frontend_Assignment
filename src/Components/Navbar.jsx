@@ -26,16 +26,18 @@ const Navbar = () => {
                     <div>
                         <img className='spotifyImage' src={spotifyClone} alt='spotifyCloneImage' />
                     </div>
-                    {songTitleList.map((title, index) => (
+                  <div className='songTitleDiv'>
+                  {songTitleList.map((title, index) => (
                         <div key={index} className='songCoverTittleName'>
                             <p
                                 onClick={() => setSongTitleFun(index)}
-                                style={{ color: selectedTitleIndex === index ? 'white' : 'black' }}
+                                style={{ color: selectedTitleIndex === index ? 'white' : '#383838' }}
                             >
                                 {title}
                             </p>
                         </div>
                     ))}
+                  </div>
                 </div>
                 <div className='profile'>
                     <img className='profilePoster' src={girlImage}/>

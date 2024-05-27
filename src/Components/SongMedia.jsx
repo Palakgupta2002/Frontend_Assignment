@@ -6,10 +6,11 @@ import next from "../assest/Vector (3).png";
 import speaker from "../assest/Vector (4).png";
 import pause from "../assest/Frame 32.png";
 import dots from "../assest/Vector.png";
+import {Popover } from 'antd';
 
 const SongMedia = () => {
-  const { currentSong,isPlaying, setIsPlaying,progress, setProgress,recentltPlayed,setrecentlyPlayed } = useContext(SongContext);
- 
+  const { currentSong, isPlaying, setIsPlaying, progress, setProgress} = useContext(SongContext);
+  const [open, setOpen] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -37,14 +38,24 @@ const SongMedia = () => {
     setProgress(progress);
   };
 
-  const addMusicInRecentPalyed=()=>{
-    setrecentlyPlayed([...recentltPlayed,currentSong])
-    console.log(recentltPlayed,"hello recently Played")
+
+  const addMusicInRecentPalyed = () => {
+   const addYourFav= JSON.parse(localStorage.getItem("MyFavSongs"))||[]
+    const updatedFav = [...addYourFav,currentSong];
+    localStorage.setItem("MyFavSongs", JSON.stringify(updatedFav));
     
   }
+  const hide = () => {
+    setOpen(false);
+  };
+
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+  };
 
   return (
     <div className='songMedia'>
+      <div className='songname'>{currentSong.songName}</div>
       <div>{currentSong.singerName}</div>
       <div className='imageDiv'>
         <img className='image' src={currentSong?.songImage} alt='songimage' />
@@ -53,11 +64,19 @@ const SongMedia = () => {
         <div className='progress' style={{ width: `${progress}%` }}></div>
       </div>
       <div className='audioControlComponents'>
-        <div className='saveSong' onClick={addMusicInRecentPalyed} ><img src={dots} alt="" /></div>
+        <Popover
+          content={<a onClick={hide}>Add Your Fav</a>}
+          trigger="click"
+          open={open}
+          onOpenChange={handleOpenChange}
+        >
+          <div className='saveSong' onClick={addMusicInRecentPalyed} ><img src={dots} alt="" /></div>
+        </Popover>
+
         <div className='audioControl'>
           <div><img src={previous} alt="previous" /></div>
           <div onClick={handlePlayPause}>
-            <img src={isPlaying ? pause : play} alt="play/pause" />
+            <img width={"32px"} src={isPlaying ? pause : play} alt="play/pause" />
           </div>
           <div><img src={next} alt="next" /></div>
         </div>

@@ -4,28 +4,40 @@ import songs from '../Songs';
 import SongElement from './SongElement';
 
 const SongList = () => {
-  const { songTitle, recentltPlayed } = useContext(SongContext);
+  const { songTitle}= useContext(SongContext);
   const [selectedTitleIndex, setSelectedTitleIndex] = useState("");
   const [songData, setSongData] = useState(songs);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [addYourFav, setAddYourFav] = useState([]);
+  const recentltyPlayed=JSON.parse(localStorage.getItem("recentlyPlayed"))
+
+
   useEffect(() => {
-    if (songTitle === "Recently Played") {
-      setSongData(recentltPlayed);
+    const storedFavSongs = JSON.parse(localStorage.getItem("MyFavSongs")) || [];
+    setAddYourFav(storedFavSongs);
+  }, []);
+  useEffect(() => {
+    const storedFavSongs = JSON.parse(localStorage.getItem("MyFavSongs")) || [];
+    const recentltyPlayed = JSON.parse(localStorage.getItem("recentlyPlayed"));
+    if (songTitle === "Favourites") {
+      setSongData(storedFavSongs);
+    } else if (songTitle === "Recently Played") {
+      setSongData(recentltyPlayed);
     } else {
       setSongData(songs);
     }
-  }, [songTitle, recentltPlayed]);
+  }, [songTitle]);
 
   // Function to filter songs based on search term
-  const filteredSongs = songData.filter(song =>
+  const filteredSongs = songData?.filter(song =>
     song.songName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     song.singerName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className='SongList'>
-      <div className='songtitle'>{songTitle}</div>
+      <div className='CurrentSongtitle'>{songTitle}</div>
       <div className='inputDiv'>
         <input
           type='text'
@@ -37,7 +49,7 @@ const SongList = () => {
       </div>
       <div className='songListElement'>
         {
-          filteredSongs.map((ele, index) => (
+          filteredSongs?.map((ele, index) => (
             <div
               key={index}
               onClick={() => setSelectedTitleIndex(index)}

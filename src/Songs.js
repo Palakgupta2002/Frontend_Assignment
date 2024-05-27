@@ -22,75 +22,75 @@ const songs = [
       song: song1,
       songImage: image1,
       posterBackgroundColor: "linear-gradient(to bottom, #ffff66 0%, #333300 100%)",
-      singerName: "Artist One",
-      duration: "3:45",
-      songName: "Song One",
+      singerName: "Aadarsh Shinde",
+      duration: "3:47",
+      songName: "Aala re Aala",
     },
     {
       song: song2,
       songImage: image2,
       posterBackgroundColor: "linear-gradient(to bottom left, #ff6699 0%, #0066ff 100%)",
-      singerName: "Artist Two",
-      duration: "4:12",
-      songName: "Song Two"
+      singerName: "Pink Sweats",
+      duration: "2:57",
+      songName: "At My Worst"
     },
     {
       song: song3,
       songImage: image3,
       posterBackgroundColor: "linear-gradient(to bottom left, #ffffcc 0%, #663300 100%)",
-      singerName: "Artist Three",
+      singerName: "Abhijeet Unplugged",
       duration: "2:58",
-      songName: "Song Three"
+      songName: "Aa uu"
     },
     {
       song: song4,
       songImage: image4,
       posterBackgroundColor: "linear-gradient(to top right, #cc0000 0%, #787878 100%)",
-      singerName: "Artist Four",
-      duration: "3:34",
-      songName: "Song Four"
+      singerName: "Slowboy,Locaf,Crazy Mano",
+      duration: "1:47",
+      songName: "Brazilian Phonk Mano"
     },
     {
       song: song5,
       songImage: image5,
       posterBackgroundColor: "linear-gradient(to top right, #ffff00 0%, #003300 100%)",
-      singerName: "Artist Five",
-      duration: "4:20",
-      songName: "Song Five"
+      singerName: "Charis Jonson",
+      duration: "2:09",
+      songName: "Good Vibes"
     }
     ,
     {
       song: song7,
       songImage: image7,
       posterBackgroundColor: "linear-gradient(to bottom, #787878 0%, #a8a8a8 100%)",
-      singerName: "Artist Five",
+      singerName: "Music Loop",
       duration: "4:20",
-      songName: "Song Five"
+      songName: "Unplugged"
     },
     {
       song: song8,
       songImage: image8,
       posterBackgroundColor: "#A8A8A8",
-      singerName: "Artist Five",
-      duration: "4:20",
-      songName: "Song Five"
+      singerName: "Rm Lost",
+      duration: "5:25",
+      songName: "Hybe Labels"
     },
     {
       song: song9,
       songImage: image9,
       posterBackgroundColor: "#A8A8A8",
-      singerName: "Artist Five",
-      duration: "4:20",
-      songName: "Song Five"
+      singerName: "Punch,Chanyeol",
+      duration: "3:13",
+      songName: "Stay With Me"
     }
     ,
     {
       song: song6,
       songImage: image6,
       posterBackgroundColor: "linear-gradient(to bottom left, #ff6699 0%, #0066ff 100%)",
-      singerName: "Artist Five",
-      duration: "4:20",
-      songName: "Song Five"
+      singerName: "Amithabh Verma,Mithoon",
+      duration: "5:04",
+      songName: "Kinna sona"
     }
   ];
 
